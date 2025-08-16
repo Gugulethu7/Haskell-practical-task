@@ -1,0 +1,42 @@
+main :: IO ()
+main = do
+    putStrLn "HC2T1 - Types you can check in GHCi (write expected types):"
+    putStrLn "42 :: Int"
+    putStrLn "3.14 :: Double"
+    putStrLn "\"Haskell\" :: String"
+    putStrLn "'Z' :: Char"
+    putStrLn "True && False :: Bool"
+
+    putStrLn "\nHC2T2 - Test add, isEven, concatStrings:"
+    print $ add 5 7             -- 12
+    print $ isEven 4            -- True
+    print $ isEven 3            -- False
+    print $ concatStrings "Hi, " "there!" -- "Hi, there!"
+
+    putStrLn "\nHC2T3 - Immutable Variables:"
+    print myAge
+    print piValue
+    putStrLn greeting
+    print isHaskellFun
+
+    putStrLn "\nHC2T4 - Prefix and Infix notations:"
+    print prefix1               -- 8
+    print prefix2               -- 40
+    print prefix3               -- False
+    print infix1                -- 9
+    print infix2                -- 30
+    print infix3                -- False
+
+    putStrLn "\nHC2T5 - circleArea and maxOfThree:"
+    print $ circleArea 3.0      -- approx 28.274334
+    print $ maxOfThree 7 12 9   -- 12
+
+    putStrLn "\nHC2T6 - Int vs Integer variables:"
+    print smallNumber           -- 262
+    print bigNumber             -- 2127
+
+    putStrLn "\nHC2T7 - Boolean Expressions:"
+    print trueAnd               -- True
+    print falseOr              -- False
+    print trueNot               -- True
+    print comparisonFalse       -- False
