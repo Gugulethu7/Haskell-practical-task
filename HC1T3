@@ -1,0 +1,58 @@
+main :: IO ()
+main = do
+  -- HC3T1
+  putStrLn "HC3T1 - checkNumber:"
+  print $ checkNumber 5
+  print $ checkNumber (-3)
+  print $ checkNumber 0
+
+  -- HC3T2
+  putStrLn "\nHC3T2 - grade:"
+  print $ grade 95
+  print $ grade 72
+  print $ grade 50
+
+  -- HC3T3
+  putStrLn "\nHC3T3 - rgbToHex:"
+  print $ rgbToHex (255, 0, 127)
+  print $ rgbToHex (0, 255, 64)
+
+  -- HC3T4
+  putStrLn "\nHC3T4 - triangleArea:"
+  print $ triangleArea 3 4 5
+  print $ triangleArea 7 8 9
+
+  -- HC3T5
+  putStrLn "\nHC3T5 - triangleType:"
+  print $ triangleType 3 3 3
+  print $ triangleType 5 5 8
+  print $ triangleType 6 7 8
+
+  -- HC3T6
+  putStrLn "\nHC3T6 - isLeapYear:"
+  print $ isLeapYear 2000
+  print $ isLeapYear 1900
+  print $ isLeapYear 2024
+
+  -- HC3T7
+  putStrLn "\nHC3T7 - season:"
+  print $ season 3
+  print $ season 7
+  print $ season 11
+  print $ season 13  -- invalid month test
+
+  -- HC3T8
+  putStrLn "\nHC3T8 - bmiCategory:"
+  print $ bmiCategory 70 1.75
+  print $ bmiCategory 90 1.8
+
+  -- HC3T9
+  putStrLn "\nHC3T9 - maxOfThree:"
+  print $ maxOfThree 10 20 15
+  print $ maxOfThree 5 25 10
+
+  -- HC3T10
+  putStrLn "\nHC3T10 - isPalindrome:"
+  print $ isPalindrome "racecar"
+  print $ isPalindrome "haskell"
+  print $ isPalindrome "madam"
