@@ -1,0 +1,51 @@
+main :: IO ()
+main = do
+  -- HC4T1
+  putStrLn "HC4T1 - weatherReport:"
+  print $ weatherReport "sunny"
+  print $ weatherReport "rainy"
+  print $ weatherReport "stormy"
+
+  -- HC4T2
+  putStrLn "\nHC4T2 - dayType:"
+  print $ dayType "Saturday"
+  print $ dayType "Monday"
+  print $ dayType "Funday"
+
+  -- HC4T3
+  putStrLn "\nHC4T3 - gradeComment:"
+  print $ gradeComment 95
+  print $ gradeComment 75
+  print $ gradeComment 55
+  print $ gradeComment 30
+  print $ gradeComment 105
+
+  -- HC4T4
+  putStrLn "\nHC4T4 - specialBirthday:"
+  print $ specialBirthday 16
+  print $ specialBirthday 18
+  print $ specialBirthday 22
+
+  -- HC4T5
+  putStrLn "\nHC4T5 - specialBirthdayModified:"
+  print $ specialBirthdayModified 16
+  print $ specialBirthdayModified 21
+  print $ specialBirthdayModified 30
+
+  -- HC4T6
+  putStrLn "\nHC4T6 - whatsInsideThisList:"
+  print $ whatsInsideThisList ([] :: [Int])
+  print $ whatsInsideThisList [1]
+  print $ whatsInsideThisList [1,2]
+  print $ whatsInsideThisList [1,2,3]
+
+  -- HC4T7
+  putStrLn "\nHC4T7 - firstAndThird:"
+  print $ firstAndThird [10,20,30,40]
+  print $ firstAndThird [1,2]
+  print $ firstAndThird ([] :: [Int])
+
+  -- HC4T8
+  putStrLn "\nHC4T8 - describeTuple:"
+  print $ describeTuple ("Alice", 23, True)
+  print $ describeTuple ("Bob", 30, False)
