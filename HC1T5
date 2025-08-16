@@ -1,0 +1,77 @@
+import Data.Char (isUpper)
+
+-- HC5T1: Apply a function three times
+applyThrice :: (Int -> Int) -> Int -> Int
+applyThrice f x = f (f (f x))
+
+-- HC5T2: Filter odd numbers from 1 to 30
+filterOdds :: [Int]
+filterOdds = filter odd [1..30]
+
+-- HC5T3: Check if any word starts with uppercase letter
+anyStartsUpper :: [String] -> Bool
+anyStartsUpper = any (\word -> not (null word) && isUpper (head word))
+
+-- HC5T4: Rewrite biggerThan10 using lambda
+biggerThan10 :: Int -> Bool
+biggerThan10 = \x -> x > 10
+
+-- HC5T5: Partial application to multiply by 5
+multiplyByFive :: Num a => a -> a
+multiplyByFive = (*5)
+
+-- HC5T6: Function composition to square and filter even numbers
+squareEvens :: [Int] -> [Int]
+squareEvens = filter even . map (^2)
+
+-- HC5T7: Using $ operator
+result :: Int
+result = sum $ map (*2) $ filter (>3) [1..10]
+
+-- HC5T8: Point-free style of addFive
+addFive :: Num a => a -> a
+addFive = (+5)
+
+-- HC5T9: Higher-order function transformList applying function twice to each element
+transformList :: (a -> a) -> [a] -> [a]
+transformList f = map (f . f)
+
+-- HC5T10: Combine filter, map, and any to check if any squared value > 50
+anySquaredGreaterThan50 :: [Int] -> Bool
+anySquaredGreaterThan50 = any (>50) . map (^2) . filter (const True)
+
+-- Testing main
+main :: IO ()
+main = do
+  putStrLn "HC5T1: applyThrice (+1) 5"
+  print $ applyThrice (+1) 5  -- 8
+
+  putStrLn "HC5T2: filterOdds"
+  print filterOdds
+
+  putStrLn "HC5T3: anyStartsUpper [\"hello\", \"World\", \"test\"]"
+  print $ anyStartsUpper ["hello", "World", "test"]  -- True
+
+  putStrLn "HC5T4: biggerThan10 15 and 5"
+  print $ biggerThan10 15  -- True
+  print $ biggerThan10 5   -- False
+
+  putStrLn "HC5T5: multiplyByFive 6"
+  print $ multiplyByFive 6 -- 30
+
+  putStrLn "HC5T6: squareEvens [1..10]"
+  print $ squareEvens [1..10]  -- [4,16,36,64,100]
+
+  putStrLn "HC5T7: result"
+  print result  -- 64
+
+  putStrLn "HC5T8: addFive 10"
+  print $ addFive 10  -- 15
+
+  putStrLn "HC5T9: transformList (+1) [1,2,3]"
+  print $ transformList (+1) [1,2,3]  -- [3,4,5]
+
+  putStrLn "HC5T10: anySquaredGreaterThan50 [5,6,7]"
+  print $ anySquaredGreaterThan50 [5,6,7]  -- False (since 7^2=49 < 50)
+  putStrLn "HC5T10: anySquaredGreaterThan50 [8,9,10]"
+  print $ anySquaredGreaterThan50 [8,9,10] -- True (64,81,100)
